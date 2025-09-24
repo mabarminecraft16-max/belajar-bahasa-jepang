@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Japanese Learning Game - 日本語学習ゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="language-selector">
+            <select id="language-select" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="id">Bahasa Indonesia</option>
+            </select>
+        </div>
+        <h1 data-translate="title">🇯🇵 Japanese Learning Game 日本語学習ゲーム</h1>
+        <nav>
+            <button onclick="showSection('home')" class="nav-btn active" data-translate="nav-home">Home</button>
+            <button onclick="showSection('hiragana')" class="nav-btn" data-translate="nav-hiragana">ひらがな (Hiragana)</button>
+            <button onclick="showSection('katakana')" class="nav-btn" data-translate="nav-katakana">カタカナ (Katakana)</button>
+            <button onclick="showSection('kanji')" class="nav-btn" data-translate="nav-kanji">漢字 (Kanji)</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Homepage Section -->
+        <section id="home" class="game-section active">
+            <h2 data-translate="home-title">Welcome to Japanese Learning Game! 日本語学習ゲームへようこそ！</h2>
+            <div class="home-content">
+                <p data-translate="home-description">Learn Japanese characters through fun matching games! Choose from Hiragana, Katakana, or Kanji to start your journey.</p>
+                <div class="home-features">
+                    <div class="feature">
+                        <h3>ひらがな (Hiragana)</h3>
+                        <p>Master the basic Japanese phonetic script</p>
+                    </div>
+                    <div class="feature">
+                        <h3>カタカナ (Katakana)</h3>
+                        <p>Learn the script for foreign words</p>
+                    </div>
+                    <div class="feature">
+                        <h3>漢字 (Kanji)</h3>
+                        <p>Explore Chinese characters with meanings</p>
+                    </div>
+                </div>
+                <button onclick="startFromHome()" class="game-btn" data-translate="start-game">Start Learning</button>
+            </div>
+        </section>
+
+        <!-- Hiragana Section -->
+        <section id="hiragana" class="game-section active">
+            <h2>ひらがな (Hiragana) - Level 1</h2>
+            <div class="game-info">
+                <p>Match the Hiragana characters with their Romanji pronunciations!</p>
+                <div class="score">Score: <span id="hiragana-score">0</span></div>
+                <div class="level">Level: <span id="hiragana-level">1</span></div>
+            </div>
+
+            <div class="game-container">
+                <div class="characters" id="hiragana-characters"></div>
+                <div class="options" id="hiragana-options"></div>
+            </div>
+
+            <div class="controls">
+                <button onclick="startHiraganaGame()" class="game-btn">New Game</button>
+                <button onclick="checkHiraganaAnswer()" class="game-btn">Check Answer</button>
+                <button onclick="showHiraganaHint()" class="game-btn">Hint</button>
+            </div>
+
+            <div class="feedback" id="hiragana-feedback"></div>
+        </section>
+
+        <!-- Katakana Section -->
+        <section id="katakana" class="game-section">
+            <h2>カタカナ (Katakana) - Level 1</h2>
+            <div class="game-info">
+                <p>Match the Katakana characters with their Romanji pronunciations!</p>
+                <div class="score">Score: <span id="katakana-score">0</span></div>
+                <div class="level">Level: <span id="katakana-level">1</span></div>
+            </div>
+
+            <div class="game-container">
+                <div class="characters" id="katakana-characters"></div>
+                <div class="options" id="katakana-options"></div>
+            </div>
+
+            <div class="controls">
+                <button onclick="startKatakanaGame()" class="game-btn">New Game</button>
+                <button onclick="checkKatakanaAnswer()" class="game-btn">Check Answer</button>
+                <button onclick="showKatakanaHint()" class="game-btn">Hint</button>
+            </div>
+
+            <div class="feedback" id="katakana-feedback"></div>
+        </section>
+
+        <!-- Kanji Section -->
+        <section id="kanji" class="game-section">
+            <h2>漢字 (Kanji) - Level 1</h2>
+            <div class="game-info">
+                <p>Match the Kanji characters with their meanings!</p>
+                <div class="score">Score: <span id="kanji-score">0</span></div>
+                <div class="level">Level: <span id="kanji-level">1</span></div>
+            </div>
+
+            <div class="game-container">
+                <div class="characters" id="kanji-characters"></div>
+                <div class="options" id="kanji-options"></div>
+            </div>
+
+            <div class="controls">
+                <button onclick="startKanjiGame()" class="game-btn">New Game</button>
+                <button onclick="checkKanjiAnswer()" class="game-btn">Check Answer</button>
+                <button onclick="showKanjiHint()" class="game-btn">Hint</button>
+            </div>
+
+            <div class="feedback" id="kanji-feedback"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Japanese Learning Game - Learn Japanese through fun puzzles!</p>
+        <p>デザインと開発 by:Muhamad Afdi Santoso</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
