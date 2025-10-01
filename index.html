@@ -20,6 +20,7 @@
             <button onclick="showSection('hiragana')" class="nav-btn" data-translate="nav-hiragana">ひらがな (Hiragana)</button>
             <button onclick="showSection('katakana')" class="nav-btn" data-translate="nav-katakana">カタカナ (Katakana)</button>
             <button onclick="showSection('kanji')" class="nav-btn" data-translate="nav-kanji">漢字 (Kanji)</button>
+            <button onclick="showSection('wordarrange')" class="nav-btn" data-translate="nav-wordarrange">Susun Kata (Word Arrange)</button>
         </nav>
     </header>
 
@@ -48,7 +49,7 @@
         </section>
 
         <!-- Hiragana Section -->
-        <section id="hiragana" class="game-section active">
+        <section id="hiragana" class="game-section">
             <h2>ひらがな (Hiragana) - Level 1</h2>
             <div class="game-info">
                 <p>Match the Hiragana characters with their Romanji pronunciations!</p>
@@ -114,6 +115,29 @@
             </div>
 
             <div class="feedback" id="kanji-feedback"></div>
+        </section>
+
+        <!-- Word Arrange Section -->
+        <section id="wordarrange" class="game-section">
+            <h2>Susun Kata (Word Arrange) - Level 1</h2>
+            <div class="game-info">
+                <p>Arrange the syllables to form the correct Japanese word!</p>
+                <div class="score">Score: <span id="wordarrange-score">0</span></div>
+                <div class="level">Level: <span id="wordarrange-level">1</span></div>
+            </div>
+
+            <div class="wordarrange-container">
+                <div class="wordarrange-target" id="wordarrange-target"></div>
+                <div class="wordarrange-syllables" id="wordarrange-syllables"></div>
+            </div>
+
+            <div class="controls">
+                <button onclick="startWordArrangeGame()" class="game-btn">New Game</button>
+                <button onclick="checkWordArrangeAnswer()" class="game-btn">Check Answer</button>
+                <button onclick="showWordArrangeHint()" class="game-btn">Hint</button>
+            </div>
+
+            <div class="feedback" id="wordarrange-feedback"></div>
         </section>
     </main>
 
